@@ -43,7 +43,7 @@ Write-Host "[Install] Scoop apps"
 installScoopApps
 
 Write-Host "[Install] dotfiles"
-New-Item "$Env:UserProfile\WorkSpaces\Git" -ItemType Directory
+New-Item "$Env:UserProfile\WorkSpaces\Git" -ItemType Directory -Force
 Set-Location "$Env:UserProfile\WorkSpaces\Git"
 git clone $gitRepositoryURL
 Set-Location (Split-Path -Parent $MyInvocation.MyCommand.Path)

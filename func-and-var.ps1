@@ -104,9 +104,11 @@ function installScoopApps {
     scoop install git
     scoop bucket add extras
     @(
+        "aria2",
         "sudo",
         "grep",
         "less",
+        "adb",
         "gitignore",
         "googlechrome",
         "vscode",
@@ -120,6 +122,7 @@ function installScoopApps {
         "wireshark",
         "windows-terminal",
         "starship",
+        "vcredist2019",
         "neofetch"
     ) | ForEach-Object { scoop install $_ }
 
