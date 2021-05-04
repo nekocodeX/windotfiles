@@ -44,6 +44,8 @@ function settingExplorer {
 }
 
 function removeUnnecessaryApps {
+    Start-Process ms-windows-store://downloadsandupdates
+    Read-Host "ToDo: Microsoft Store アプリ 更新"
     @(
         "Microsoft.3DBuilder",
         "Microsoft.Microsoft3DViewer",
@@ -148,8 +150,6 @@ function manualSettingGUI {
     Read-Host "ToDo: Windowsの更新時に他のMicrosoft製品の更新プログラムを受け取る 設定"
     Write-Host "[Update] Windows"
     UsoClient StartInteractiveScan
-    Start-Process ms-windows-store://downloadsandupdates
-    Read-Host "ToDo: Microsoft Store アプリ 更新"
     Start-Process shell:recyclebinfolder
     Read-Host "ToDo: ごみ箱 設定"
     Start-Process ms-settings:taskbar
