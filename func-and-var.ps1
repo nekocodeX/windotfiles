@@ -124,7 +124,7 @@ function installScoopApps {
         "neofetch"
     ) | ForEach-Object { scoop install $_ }
 
-    "$Env:SCOOP\apps\vscode\current\vscode-install-context.reg"
+    reg import "$Env:UserProfile\Scoop\apps\vscode\current\vscode-install-context.reg"
 }
 
 function settingUserPath {
