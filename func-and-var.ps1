@@ -39,6 +39,8 @@ function settingExplorer {
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "NavPaneExpandToCurrentFolder" -Value 1 -Force
     # 小さいタスクバーボタンを使う ON
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "TaskbarSmallIcons" -Value 1 -Force
+    # デスクトップ ごみ箱 アイコン OFF
+    New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -name "{645FF040-5081-101B-9F08-00AA002F954E}" -Value 1 -Force
 }
 
 function removeUnnecessaryApps {
