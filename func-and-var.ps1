@@ -88,12 +88,6 @@ function createDirectories {
     New-Item "$Env:UserProfile\WorkSpaces" -ItemType Directory -Force
 }
 
-function settingUserPath {
-    $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
-    $userPath = "$Env:UserProfile\#Path;" + $userPath
-    [Environment]::SetEnvironmentVariable("Path", $userPath, "User")
-}
-
 function installScoop {
     if (Test-Path "$Env:UserProfile\Scoop") {
         Write-Host "[Skip]"
@@ -131,6 +125,13 @@ function installScoopApps {
     "$Env:SCOOP\apps\vscode\current\vscode-install-context.reg"
 }
 
+function settingUserPath {
+    $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+    $userPath = $userPath.Replace("$Env:UserProfile\#Path;", "")
+    $userPath = "$Env:UserProfile\#Path;" + $userPath
+    [Environment]::SetEnvironmentVariable("Path", $userPath, "User")
+}
+
 function installDotfiles {
     Get-ChildItem "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot" -File | ForEach-Object { New-Item -Path "$Env:UserProfile\$_" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\$_" -ItemType SymbolicLink -Force }
     New-Item -Path "$Env:UserProfile\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-powershell\Microsoft.PowerShell_profile.ps1" -ItemType SymbolicLink -Force
@@ -153,6 +154,13 @@ function manualSettingGUI {
     Read-Host "ToDo: ごみ箱 設定"
     Start-Process ms-settings:taskbar
     Read-Host "ToDo: タスクバーの位置 設定"
+    Start-Process ms-settings:defaultapps
+    Read-Host "ToDo: 既定のアプリ 設定"
+    Start-Process ms-settings:optionalfeatures
+    Read-Host "ToDo: オプション機能 設定"
+    Start-Process optionalfeatures
+    Read-Host "ToDo: Windowsの機能 設定"
+    Start-Process explorer "$Env:UserProfile\Scoop\apps"
     Start-Process shell:startup
     Read-Host "ToDo: スタートアップ 設定"
     Read-Host "ToDo: スタートメニュータイル 削除"

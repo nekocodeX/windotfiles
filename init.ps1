@@ -33,14 +33,14 @@ removeOneDrive
 Write-Host "[Create] Directories"
 createDirectories
 
-Write-Host "[Setting] User path"
-settingUserPath
-
 Write-Host "[Install] Scoop"
 installScoop
 
 Write-Host "[Install] Scoop apps"
 installScoopApps
+
+Write-Host "[Setting] User path"
+settingUserPath
 
 Write-Host "[Install] dotfiles"
 New-Item "$Env:UserProfile\WorkSpaces\Git" -ItemType Directory -Force
