@@ -17,6 +17,7 @@ Set-Location (Split-Path -Parent $MyInvocation.MyCommand.Path)
 . ((Split-Path -Parent $MyInvocation.MyCommand.Path) + "\func-and-var.ps1")
 
 Write-Host "[Update] windotfiles"
+git reset --hard
 git pull origin main --rebase
 
 Write-Host "[Install] windotfiles"
