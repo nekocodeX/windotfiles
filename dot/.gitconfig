@@ -1,0 +1,7 @@
+[user]
+	name = nekocodeX
+	email = 65624234+nekocodeX@users.noreply.github.com
+[core]
+	excludesfile = ~/.gitignore_global
+[credential]
+	helper = manager-core
