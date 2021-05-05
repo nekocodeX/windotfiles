@@ -24,6 +24,7 @@ if ($LastExitCode -eq 0) {
     installDotfiles
 } else {
     Write-Host "[ERROR] ワーキングツリーの変更が破棄されることを確認した上で以下を実行してから再試行してください"
+    Write-Host "`tSet-Location $Env:UserProfile\WorkSpaces\Git\windotfiles"
     Write-Host "`tgit reset --hard"
 }
 

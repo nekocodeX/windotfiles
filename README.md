@@ -17,7 +17,7 @@ Set-Location $Env:Temp
 Invoke-WebRequest -Uri "https://github.com/nekocodeX/windotfiles/archive/refs/heads/main.zip" -UseBasicParsing -OutFile "windotfiles.zip"
 Expand-Archive -Path .\windotfiles.zip
 Remove-Item .\windotfiles.zip
-Set-Location .\windotfiles\windotfiles-main\
+Set-Location .\windotfiles\windotfiles-main
 powershell -ExecutionPolicy RemoteSigned .\init.ps1
 ```
 
@@ -37,6 +37,7 @@ error: please commit or stash them.
 ワーキングツリーの変更が破棄されることを確認した上で以下を実行してから再試行
 
 ```powershell
+Set-Location $Env:UserProfile\WorkSpaces\Git\windotfiles
 git reset --hard
 ```
 
