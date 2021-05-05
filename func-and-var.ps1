@@ -99,32 +99,35 @@ function installScoop {
 }
 
 function installScoopApps {
-    scoop install git
+    scoop install aria2 git
     scoop bucket add extras
     @(
-        "aria2",
-        "sudo",
-        "grep",
-        "less",
         "adb",
-        "gitignore",
-        "googlechrome",
-        "vscode",
-        "eartrumpet",
         "crystaldiskinfo",
         "crystaldiskmark",
         "deepl",
+        "eartrumpet",
+        "flux",
         "gimp",
+        "gitignore",
+        "googlechrome",
+        "grep",
+        "less",
+        "neofetch",
+        "quicklook",
         "simplenote",
-        "winscp",
-        "wireshark",
-        "windows-terminal",
+        "smarttaskbar",
         "starship",
+        "sudo",
         "vcredist2019",
-        "neofetch"
+        "vscode",
+        "windows-terminal",
+        "winscp",
+        "wireshark"
     ) | ForEach-Object { scoop install $_ }
 
     reg import "$Env:UserProfile\Scoop\apps\vscode\current\vscode-install-context.reg"
+    smarttaskbar-add-startup
 }
 
 function settingUserPath {
