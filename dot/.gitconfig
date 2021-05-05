@@ -3,5 +3,10 @@
 	email = 65624234+nekocodeX@users.noreply.github.com
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = code --wait
 [credential]
 	helper = manager-core
+[color]
+	ui = true
+[init]
+	defaultBranch = main
