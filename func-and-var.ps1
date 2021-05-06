@@ -68,7 +68,9 @@ function removeUnnecessaryApps {
         "Microsoft.XboxApp",
         "Microsoft.ZuneVideo",
         "Microsoft.549981C3F5F10" # Cortana
-    ) | ForEach-Object { Get-AppxPackage *$_* | Remove-AppxPackage }    
+    ) | ForEach-Object {
+        Get-AppxPackage *$_* | Remove-AppxPackage
+    }
 }
 
 function removeOneDrive {
@@ -81,7 +83,6 @@ function removeOneDrive {
         # x64
         & "$Env:SystemRoot\SysWOW64\OneDriveSetup.exe" /uninstall
     }
-    
 }
 
 function createDirectories {
@@ -98,7 +99,7 @@ function installScoop {
     }
 }
 
-function settingScoop {    
+function settingScoop {
     scoop bucket add extras
     scoop bucket add scoop-viewer-bucket https://github.com/prezesp/scoop-viewer-bucket
 }
@@ -129,7 +130,9 @@ function installScoopApps {
         "windows-terminal",
         "winscp",
         "wireshark"
-    ) | ForEach-Object { scoop install $_ }
+    ) | ForEach-Object {
+        scoop install $_
+    }
 
     reg import "$Env:UserProfile\scoop\apps\vscode\current\vscode-install-context.reg"
     smarttaskbar-add-startup
@@ -143,7 +146,9 @@ function settingUserPath {
 }
 
 function installDotfiles {
-    Get-ChildItem "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot" -File | ForEach-Object { New-Item -Path "$Env:UserProfile\$_" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\$_" -ItemType SymbolicLink -Force }
+    Get-ChildItem "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot" -File | ForEach-Object {
+        New-Item -Path "$Env:UserProfile\$_" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\$_" -ItemType SymbolicLink -Force
+    }
     New-Item -Path "$Env:UserProfile\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-powershell\Microsoft.PowerShell_profile.ps1" -ItemType SymbolicLink -Force
     New-Item -Path "$Env:LocalAppData\Microsoft\Windows Terminal\settings.json" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-terminal\settings.json" -ItemType SymbolicLink -Force
 }
