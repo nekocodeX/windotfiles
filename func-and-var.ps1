@@ -98,9 +98,13 @@ function installScoop {
     }
 }
 
+function settingScoop {    
+    scoop bucket add extras
+    scoop bucket add scoop-viewer-bucket https://github.com/prezesp/scoop-viewer-bucket
+}
+
 function installScoopApps {
     scoop install aria2 git
-    scoop bucket add extras
     @(
         "adb",
         "crystaldiskinfo",
@@ -115,6 +119,7 @@ function installScoopApps {
         "less",
         "neofetch",
         "quicklook",
+        "scoop-viewer",
         "simplenote",
         "smarttaskbar",
         "starship",

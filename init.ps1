@@ -36,6 +36,9 @@ createDirectories
 Write-Host "[Install] Scoop"
 installScoop
 
+Write-Host "[Setting] Scoop"
+settingScoop
+
 Write-Host "[Install] Scoop apps"
 installScoopApps
 
