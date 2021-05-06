@@ -23,7 +23,8 @@
             "acrylicOpacity": 0.75,
             "colorScheme": "One Half Dark",
             "cursorShape": "vintage",
-            "fontFace": "Ricty Diminished",
+            "fontFace": "HackGenNerd Console",
+            "fontSize": 14,
             "useAcrylic": true
         },
         "list": [
