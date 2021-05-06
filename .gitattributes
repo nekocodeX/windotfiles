@@ -1,2 +1,2 @@
-*.bat diff=sjis
-*.ps1 diff=sjis
+*.bat text eol=crlf
+*.ps1 text eol=crlf

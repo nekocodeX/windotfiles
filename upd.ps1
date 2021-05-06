@@ -1,6 +1,6 @@
-#Requires -RunAsAdministrator
+ï»¿#Requires -RunAsAdministrator
 
-# ƒGƒ‰[”­¶‚ÉƒƒbƒZ[ƒW‚ğ•\¦‚µA‘±s‚·‚é‚©‚Ç‚¤‚©‚ğŠm”F
+# ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿæ™‚ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã—ã€ç¶šè¡Œã™ã‚‹ã‹ã©ã†ã‹ã‚’ç¢ºèª
 $ErrorActionPreference = "Inquire"
 
 Clear-Host
@@ -23,7 +23,7 @@ if ($LastExitCode -eq 0) {
     . "$PSScriptRoot\func-and-var.ps1"
     installDotfiles
 } else {
-    Write-Host "[ERROR] ƒ[ƒLƒ“ƒOƒcƒŠ[‚Ì•ÏX‚ª”jŠü‚³‚ê‚é‚±‚Æ‚ğŠm”F‚µ‚½ã‚ÅˆÈ‰º‚ğÀs‚µ‚Ä‚©‚çÄs‚µ‚Ä‚­‚¾‚³‚¢"
+    Write-Host "[ERROR] ãƒ¯ãƒ¼ã‚­ãƒ³ã‚°ãƒ„ãƒªãƒ¼ã®å¤‰æ›´ãŒç ´æ£„ã•ã‚Œã‚‹ã“ã¨ã‚’ç¢ºèªã—ãŸä¸Šã§ä»¥ä¸‹ã‚’å®Ÿè¡Œã—ã¦ã‹ã‚‰å†è©¦è¡Œã—ã¦ãã ã•ã„"
     Write-Host "`tSet-Location $Env:UserProfile\WorkSpaces\Git\windotfiles"
     Write-Host "`tgit reset --hard"
 }

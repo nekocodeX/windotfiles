@@ -1,51 +1,51 @@
-$gitRepositoryName = "windotfiles"
+ï»¿$gitRepositoryName = "windotfiles"
 $gitRepositoryURL = "https://github.com/nekocodeX/$gitRepositoryName"
 
 function settingSystem {
-    # ‚Æ‚«‚Ç‚«ƒXƒ^[ƒg‰æ–Ê‚É‚¨‚·‚·‚ß‚ğ•\¦‚·‚é OFF
+    # ã¨ãã©ãã‚¹ã‚¿ãƒ¼ãƒˆç”»é¢ã«ãŠã™ã™ã‚ã‚’è¡¨ç¤ºã™ã‚‹ OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-338388Enabled" -Value 0 -Force
-    # V‹@”\‚Æ‚¨‚·‚·‚ß‚ğŠm”F‚·‚é‚½‚ß‚ÉAXV‚ÌŒã‚ÆAƒTƒCƒ“ƒCƒ“‚É‚Æ‚«‚Ç‚«A[Windows‚Ö‚æ‚¤‚±‚»]‚Ìî•ñ‚ğ•\¦‚·‚é OFF
+    # æ–°æ©Ÿèƒ½ã¨ãŠã™ã™ã‚ã‚’ç¢ºèªã™ã‚‹ãŸã‚ã«ã€æ›´æ–°ã®å¾Œã¨ã€ã‚µã‚¤ãƒ³ã‚¤ãƒ³æ™‚ã«ã¨ãã©ãã€[Windowsã¸ã‚ˆã†ã“ã]ã®æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-310093Enabled" -Value 0 -Force
-    # ƒ^ƒCƒ€ƒ‰ƒCƒ“‚É‚¨‚·‚·‚ß‚ğ•\¦‚·‚é OFF
+    # ã‚¿ã‚¤ãƒ ãƒ©ã‚¤ãƒ³ã«ãŠã™ã™ã‚ã‚’è¡¨ç¤ºã™ã‚‹ OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-353698Enabled" -Value 0 -Force
-    # Windows‚ğg‚¤ã‚Å‚Ìƒqƒ“ƒg‚â‚¨Š©‚ß‚Ì•û–@‚ğæ“¾‚·‚é OFF
+    # Windowsã‚’ä½¿ã†ä¸Šã§ã®ãƒ’ãƒ³ãƒˆã‚„ãŠå‹§ã‚ã®æ–¹æ³•ã‚’å–å¾—ã™ã‚‹ OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-338389Enabled" -Value 0 -Force
-    # İ’èƒAƒvƒŠ‚Å‚¨‚·‚·‚ß‚ÌƒRƒ“ƒeƒ“ƒc‚ğ•\¦‚·‚é OFF
+    # è¨­å®šã‚¢ãƒ—ãƒªã§ãŠã™ã™ã‚ã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’è¡¨ç¤ºã™ã‚‹ OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-338393Enabled" -Value 0 -Force
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-353694Enabled" -Value 0 -Force
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-353696Enabled" -Value 0 -Force
-    # ƒƒbƒN‰æ–Ê WindowsƒXƒ|ƒbƒgƒ‰ƒCƒg OFF
+    # ãƒ­ãƒƒã‚¯ç”»é¢ Windowsã‚¹ãƒãƒƒãƒˆãƒ©ã‚¤ãƒˆ OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "RotatingLockScreenEnabled" -Value 0 -Force
-    # ƒƒbƒN‰æ–Ê Windows‚ÆCortana‚ÌƒgƒŠƒrƒA‚âƒqƒ“ƒg‚È‚Ç‚Ìî•ñ‚ğ•\¦‚·‚é OFF
+    # ãƒ­ãƒƒã‚¯ç”»é¢ Windowsã¨Cortanaã®ãƒˆãƒªãƒ“ã‚¢ã‚„ãƒ’ãƒ³ãƒˆãªã©ã®æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "RotatingLockScreenOverlayEnabled" -Value 0 -Force
-    # Šù’è‚ÌWindowsƒ‚[ƒh‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢ ƒ_[ƒN
+    # æ—¢å®šã®Windowsãƒ¢ãƒ¼ãƒ‰ã‚’é¸æŠã—ã¦ãã ã•ã„ ãƒ€ãƒ¼ã‚¯
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -name "SystemUsesLightTheme" -Value 0 -Force
-    # Šù’è‚ÌƒAƒvƒŠƒ‚[ƒh‚ğ‘I‘ğ‚µ‚Ü‚· ƒ_[ƒN
+    # æ—¢å®šã®ã‚¢ãƒ—ãƒªãƒ¢ãƒ¼ãƒ‰ã‚’é¸æŠã—ã¾ã™ ãƒ€ãƒ¼ã‚¯
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -name "AppsUseLightTheme" -Value 0 -Force
 }
 
 function settingExplorer {
-    # ƒGƒNƒXƒvƒ[ƒ‰[‚ÅŠJ‚­ PC
+    # ã‚¨ã‚¯ã‚¹ãƒ—ãƒ­ãƒ¼ãƒ©ãƒ¼ã§é–‹ã PC
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "LaunchTo" -Value 1 -Force
-    # “o˜^‚³‚ê‚Ä‚¢‚éŠg’£q‚Í•\¦‚µ‚È‚¢ OFF
+    # ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹æ‹¡å¼µå­ã¯è¡¨ç¤ºã—ãªã„ OFF
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "HideFileExt" -Value 0 -Force
-    # •Ê‚ÌƒvƒƒZƒX‚ÅƒtƒHƒ‹ƒ_[ƒEƒBƒ“ƒhƒE‚ğŠJ‚­ ON
+    # åˆ¥ã®ãƒ—ãƒ­ã‚»ã‚¹ã§ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ã ON
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "SeparateProcess" -Value 1 -Force
-    # ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚ğg—p‚µ‚Ä€–Ú‚ğ‘I‘ğ‚·‚é OFF
+    # ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã‚’ä½¿ç”¨ã—ã¦é …ç›®ã‚’é¸æŠã™ã‚‹ OFF
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "AutoCheckSelect" -Value 0 -Force
-    # ‹ó‚Ìƒhƒ‰ƒCƒu‚Í•\¦‚µ‚È‚¢ OFF
+    # ç©ºã®ãƒ‰ãƒ©ã‚¤ãƒ–ã¯è¡¨ç¤ºã—ãªã„ OFF
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "HideDrivesWithNoMedia" -Value 0 -Force
-    # ŠJ‚¢‚Ä‚¢‚éƒtƒHƒ‹ƒ_[‚Ü‚Å“WŠJ ON
+    # é–‹ã„ã¦ã„ã‚‹ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã¾ã§å±•é–‹ ON
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "NavPaneExpandToCurrentFolder" -Value 1 -Force
-    # ¬‚³‚¢ƒ^ƒXƒNƒo[ƒ{ƒ^ƒ“‚ğg‚¤ ON
+    # å°ã•ã„ã‚¿ã‚¹ã‚¯ãƒãƒ¼ãƒœã‚¿ãƒ³ã‚’ä½¿ã† ON
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -name "TaskbarSmallIcons" -Value 1 -Force
-    # ƒfƒXƒNƒgƒbƒv ‚²‚İ”  ƒAƒCƒRƒ“ OFF
+    # ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ— ã”ã¿ç®± ã‚¢ã‚¤ã‚³ãƒ³ OFF
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -name "{645FF040-5081-101B-9F08-00AA002F954E}" -Value 1 -Force
 }
 
 function removeUnnecessaryApps {
     Start-Process ms-windows-store://downloadsandupdates
-    Read-Host "ToDo: Microsoft Store ƒAƒvƒŠ XV"
+    Read-Host "ToDo: Microsoft Store ã‚¢ãƒ—ãƒª æ›´æ–°"
     @(
         "Microsoft.3DBuilder",
         "Microsoft.Microsoft3DViewer",
@@ -154,28 +154,28 @@ function installDotfiles {
 }
 
 function manualSettingSystem {
-    $inputPcName = Read-Host "PC–¼‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"
+    $inputPcName = Read-Host "PCåã‚’å…¥åŠ›ã—ã¦ãã ã•ã„"
     Rename-Computer -NewName $inputPcName -Force
 }
 
 function manualSettingGUI {
     Start-Process ms-settings:windowsupdate-options
-    Read-Host "ToDo: Windows‚ÌXV‚É‘¼‚ÌMicrosoft»•i‚ÌXVƒvƒƒOƒ‰ƒ€‚ğó‚¯æ‚é İ’è"
+    Read-Host "ToDo: Windowsã®æ›´æ–°æ™‚ã«ä»–ã®Microsoftè£½å“ã®æ›´æ–°ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’å—ã‘å–ã‚‹ è¨­å®š"
     Write-Host "[Update] Windows"
     UsoClient StartInteractiveScan
     Start-Process shell:recyclebinfolder
-    Read-Host "ToDo: ‚²‚İ”  İ’è"
+    Read-Host "ToDo: ã”ã¿ç®± è¨­å®š"
     Start-Process ms-settings:taskbar
-    Read-Host "ToDo: ƒ^ƒXƒNƒo[‚ÌˆÊ’u İ’è"
+    Read-Host "ToDo: ã‚¿ã‚¹ã‚¯ãƒãƒ¼ã®ä½ç½® è¨­å®š"
     Start-Process ms-settings:defaultapps
-    Read-Host "ToDo: Šù’è‚ÌƒAƒvƒŠ İ’è"
+    Read-Host "ToDo: æ—¢å®šã®ã‚¢ãƒ—ãƒª è¨­å®š"
     Start-Process ms-settings:optionalfeatures
-    Read-Host "ToDo: ƒIƒvƒVƒ‡ƒ“‹@”\ İ’è"
+    Read-Host "ToDo: ã‚ªãƒ—ã‚·ãƒ§ãƒ³æ©Ÿèƒ½ è¨­å®š"
     Start-Process optionalfeatures
-    Read-Host "ToDo: Windows‚Ì‹@”\ İ’è"
+    Read-Host "ToDo: Windowsã®æ©Ÿèƒ½ è¨­å®š"
     Start-Process explorer "$Env:UserProfile\scoop\apps"
     Start-Process shell:startup
-    Read-Host "ToDo: ƒXƒ^[ƒgƒAƒbƒv İ’è"
-    Read-Host "ToDo: ƒXƒ^[ƒgƒƒjƒ…[ƒ^ƒCƒ‹ íœ"
-    Read-Host "ToDo: ‚»‚Ì‘¼UI ƒJƒXƒ^ƒ}ƒCƒY"
+    Read-Host "ToDo: ã‚¹ã‚¿ãƒ¼ãƒˆã‚¢ãƒƒãƒ— è¨­å®š"
+    Read-Host "ToDo: ã‚¹ã‚¿ãƒ¼ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚¿ã‚¤ãƒ« å‰Šé™¤"
+    Read-Host "ToDo: ãã®ä»–UI ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚º"
 }

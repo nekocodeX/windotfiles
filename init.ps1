@@ -1,6 +1,6 @@
-#Requires -RunAsAdministrator
+ï»¿#Requires -RunAsAdministrator
 
-# ƒGƒ‰[”­¶‚ÉƒƒbƒZ[ƒW‚ğ•\¦‚µA‘±s‚·‚é‚©‚Ç‚¤‚©‚ğŠm”F
+# ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿæ™‚ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã—ã€ç¶šè¡Œã™ã‚‹ã‹ã©ã†ã‹ã‚’ç¢ºèª
 $ErrorActionPreference = "Inquire"
 
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -58,6 +58,6 @@ manualSettingSystem
 Write-Host "[Manual] [Setting] GUI"
 manualSettingGUI
 
-Read-Host "İ’è‚ğŠ®—¹‚·‚é‚½‚ß‚ÉÄ‹N“®‚·‚é‚É‚ÍAEnter ƒL[‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢"
+Read-Host "è¨­å®šã‚’å®Œäº†ã™ã‚‹ãŸã‚ã«å†èµ·å‹•ã™ã‚‹ã«ã¯ã€Enter ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ãã ã•ã„"
 Set-Location $bkupPwd
 Restart-Computer
