@@ -91,7 +91,7 @@ function createDirectories {
 }
 
 function installScoop {
-    if (Test-Path "$Env:UserProfile\Scoop") {
+    if (Test-Path "$Env:UserProfile\scoop") {
         Write-Host "[Skip]"
     } else {
         Invoke-Expression (New-Object System.Net.WebClient).DownloadString("https://get.scoop.sh")
@@ -126,7 +126,7 @@ function installScoopApps {
         "wireshark"
     ) | ForEach-Object { scoop install $_ }
 
-    reg import "$Env:UserProfile\Scoop\apps\vscode\current\vscode-install-context.reg"
+    reg import "$Env:UserProfile\scoop\apps\vscode\current\vscode-install-context.reg"
     smarttaskbar-add-startup
 }
 
@@ -163,7 +163,7 @@ function manualSettingGUI {
     Read-Host "ToDo: オプション機能 設定"
     Start-Process optionalfeatures
     Read-Host "ToDo: Windowsの機能 設定"
-    Start-Process explorer "$Env:UserProfile\Scoop\apps"
+    Start-Process explorer "$Env:UserProfile\scoop\apps"
     Start-Process shell:startup
     Read-Host "ToDo: スタートアップ 設定"
     Read-Host "ToDo: スタートメニュータイル 削除"

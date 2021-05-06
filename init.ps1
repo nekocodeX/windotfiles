@@ -15,8 +15,8 @@ Write-Host "  \_/\_/  |_||_| |_| \__,_| \___/  \__||_|  |_||_| \___||___/"
 Write-Host "Initialization by nekocodeX"
 
 $bkupPwd = Get-Location
-Set-Location (Split-Path -Parent $MyInvocation.MyCommand.Path)
-. ((Split-Path -Parent $MyInvocation.MyCommand.Path) + "\func-and-var.ps1")
+Set-Location $PSScriptRoot
+. "$PSScriptRoot\func-and-var.ps1"
 
 Write-Host "[Setting] System"
 settingSystem
@@ -46,7 +46,7 @@ Write-Host "[Install] dotfiles"
 New-Item "$Env:UserProfile\WorkSpaces\Git" -ItemType Directory -Force
 Set-Location "$Env:UserProfile\WorkSpaces\Git"
 git clone $gitRepositoryURL
-Set-Location (Split-Path -Parent $MyInvocation.MyCommand.Path)
+Set-Location $PSScriptRoot
 installDotfiles
 
 Write-Host "[Manual] [Setting] System"

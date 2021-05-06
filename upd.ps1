@@ -13,14 +13,14 @@ Write-Host "  \_/\_/  |_||_| |_| \__,_| \___/  \__||_|  |_||_| \___||___/"
 Write-Host "Update by nekocodeX"
 
 $bkupPwd = Get-Location
-Set-Location (Split-Path -Parent $MyInvocation.MyCommand.Path)
+Set-Location $PSScriptRoot
 
 Write-Host "[Update] windotfiles"
 git pull origin main --rebase
 
 if ($LastExitCode -eq 0) {
     Write-Host "[Install] windotfiles"
-    . ((Split-Path -Parent $MyInvocation.MyCommand.Path) + "\func-and-var.ps1")
+    . "$PSScriptRoot\func-and-var.ps1"
     installDotfiles
 } else {
     Write-Host "[ERROR] ワーキングツリーの変更が破棄されることを確認した上で以下を実行してから再試行してください"
