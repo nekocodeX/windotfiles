@@ -1,9 +1,9 @@
-﻿#Requires -RunAsAdministrator
+#Requires -RunAsAdministrator
 
 # エラー発生時にメッセージを表示し、続行するかどうかを確認
 $ErrorActionPreference = "Inquire"
 
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 Clear-Host
 Write-Host "           _             _         _     __  _  _"
