@@ -2,6 +2,8 @@
 $gitRepositoryURL = "https://github.com/nekocodeX/$gitRepositoryName"
 
 function settingSystem {
+    # ロングパス制限 OFF
+    New-ItemProperty -LiteralPath "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -name "LongPathsEnabled" -Value 1 -Force
     # ときどきスタート画面におすすめを表示する OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -name "SubscribedContent-338388Enabled" -Value 0 -Force
     # 新機能とおすすめを確認するために、更新の後と、サインイン時にときどき、[Windowsへようこそ]の情報を表示する OFF
@@ -148,6 +150,10 @@ function settingUserPath {
 function installDotfiles {
     Get-ChildItem "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot" -File | ForEach-Object {
         New-Item -Path "$Env:UserProfile\$_" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\$_" -ItemType SymbolicLink -Force
+    }
+    New-Item "$Env:UserProfile\.config" -ItemType Directory -Force
+    Get-ChildItem "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\.config" -File | ForEach-Object {
+        New-Item -Path "$Env:UserProfile\.config\$_" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\.config\$_" -ItemType SymbolicLink -Force
     }
     New-Item -Path "$Env:UserProfile\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-powershell\Microsoft.PowerShell_profile.ps1" -ItemType SymbolicLink -Force
     New-Item -Path "$Env:LocalAppData\Microsoft\Windows Terminal\settings.json" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-terminal\settings.json" -ItemType SymbolicLink -Force

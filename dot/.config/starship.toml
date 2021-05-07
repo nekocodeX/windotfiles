@@ -1,0 +1,85 @@
+add_newline = false
+
+[cmd_duration]
+format = " [$duration]($style)"
+
+[directory]
+read_only = " "
+truncate_to_repo = false
+truncation_symbol = " /"
+
+[git_status]
+disabled = true
+
+[memory_usage]
+disabled = false
+format = "$symbol [$ram_pct]($style) "
+symbol = ""
+
+[time]
+disabled = false
+format = "[$time]($style) "
+use_12hr = true
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
