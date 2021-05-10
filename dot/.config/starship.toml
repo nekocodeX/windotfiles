@@ -18,8 +18,8 @@ disabled = true
 
 [memory_usage]
 disabled = false
-format = "$symbol [$ram_pct]($style) "
-symbol = ""
+format = "via [$symbol$ram_pct]($style) "
+symbol = " "
 
 [time]
 disabled = false
