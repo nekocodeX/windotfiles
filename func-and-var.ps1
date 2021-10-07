@@ -156,6 +156,10 @@ function manualSettingGUI {
     UsoClient StartInteractiveScan
     Start-Process ms-settings:taskbar
     Read-Host "ToDo: タスクバー 設定"
+    Start-Process ms-settings:personalization-start
+    Read-Host "ToDo: スタート 設定"
+    Start-Process ms-settings:personalization-start-places
+    Read-Host "ToDo: スタートフォルダー 設定"
     Start-Process ms-settings:defaultapps
     Read-Host "ToDo: 既定のアプリ 設定"
     Start-Process ms-settings:clipboard
