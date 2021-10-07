@@ -162,6 +162,8 @@ function manualSettingGUI {
     Read-Host "ToDo: クリップボード 設定"
     Start-Process ms-settings:regionlanguage-jpnime
     Read-Host "ToDo: IME 設定"
+    Start-Process ms-settings:dateandtime
+    Read-Host "ToDo: 日付と時刻 設定"
     Start-Process ms-settings:optionalfeatures
     Read-Host "ToDo: オプション機能 設定"
     Start-Process optionalfeatures
