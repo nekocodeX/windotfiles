@@ -4,13 +4,7 @@ $gitRepositoryURL = "https://github.com/nekocodeX/$gitRepositoryName"
 function settingSystem {
     # ロングパス制限 OFF
     New-ItemProperty -LiteralPath "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -Force
-    # ときどきスタート画面におすすめを表示する OFF
-    New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338388Enabled" -Value 0 -Force
-    # 新機能とおすすめを確認するために、更新の後と、サインイン時にときどき、[Windowsへようこそ]の情報を表示する OFF
-    New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-310093Enabled" -Value 0 -Force
-    # タイムラインにおすすめを表示する OFF
-    New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353698Enabled" -Value 0 -Force
-    # Windowsを使う上でのヒントやお勧めの方法を取得する OFF
+    # Windowsの使用時にヒントと提案を表示する OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338389Enabled" -Value 0 -Force
     # 設定アプリでおすすめのコンテンツを表示する OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-338393Enabled" -Value 0 -Force
@@ -18,11 +12,10 @@ function settingSystem {
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "SubscribedContent-353696Enabled" -Value 0 -Force
     # ロック画面 Windowsスポットライト OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenEnabled" -Value 0 -Force
-    # ロック画面 WindowsとCortanaのトリビアやヒントなどの情報を表示する OFF
+    # ロック画面にトリビアやヒントなどの情報を表示する OFF
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" -Name "RotatingLockScreenOverlayEnabled" -Value 0 -Force
-    # 既定のWindowsモードを選択してください ダーク
+    # ダークモード
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0 -Force
-    # 既定のアプリモードを選択します ダーク
     New-ItemProperty -LiteralPath "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 0 -Force
 }
 
@@ -39,8 +32,8 @@ function settingExplorer {
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideDrivesWithNoMedia" -Value 0 -Force
     # 開いているフォルダーまで展開 ON
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "NavPaneExpandToCurrentFolder" -Value 1 -Force
-    # 小さいタスクバーボタンを使う ON
-    New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSmallIcons" -Value 1 -Force
+    # 項目間のスペースを減らす(コンパクトビュー) ON
+    New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "UseCompactMode" -Value 1 -Force
     # デスクトップ ごみ箱 アイコン OFF
     New-ItemProperty -LiteralPath "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" -Name "{645FF040-5081-101B-9F08-00AA002F954E}" -Value 1 -Force
 }
@@ -49,27 +42,26 @@ function removeUnnecessaryApps {
     Start-Process ms-windows-store://downloadsandupdates
     Read-Host "ToDo: Microsoft Store アプリ 更新"
     @(
-        "Microsoft.3DBuilder",
-        "Microsoft.Microsoft3DViewer",
-        "Microsoft.Print3D",
+        "Microsoft.549981C3F5F10", # Cortana
+        "Microsoft.BingNews",
         "Microsoft.BingWeather",
+        "Microsoft.GamingApp",
         "Microsoft.GetHelp",
         "Microsoft.Getstarted",
-        "Microsoft.Microsoft3DViewer",
         "Microsoft.MicrosoftOfficeHub",
         "Microsoft.MicrosoftSolitaireCollection",
-        "MixedReality",
-        "Microsoft.MSPaint",
+        "Microsoft.OneDriveSync",
+        "Microsoft.People",
+        "Microsoft.PowerAutomateDesktop",
         "Microsoft.Office.OneNote",
         "Microsoft.People",
-        "Microsoft.SkypeApp",
+        "Microsoft.Todos",
         "microsoft.windowscommunicationsapps",
         "Microsoft.WindowsFeedbackHub",
         "Microsoft.WindowsMaps",
-        "Microsoft.Xbox.TCUI",
-        "Microsoft.XboxApp",
         "Microsoft.ZuneVideo",
-        "Microsoft.549981C3F5F10" # Cortana
+        "MicrosoftTeams",
+        "SpotifyAB.SpotifyMusic"
     ) | ForEach-Object {
         Get-AppxPackage *$_* | Remove-AppxPackage
     }
@@ -114,7 +106,6 @@ function installScoopApps {
         "crystaldiskmark",
         "deepl",
         "eartrumpet",
-        "flux",
         "gimp",
         "gitignore",
         "googlechrome",
@@ -124,12 +115,10 @@ function installScoopApps {
         "quicklook",
         "scoop-viewer",
         "simplenote",
-        "smarttaskbar",
         "starship",
         "sudo",
         "vcredist2019",
         "vscode",
-        "windows-terminal",
         "winscp",
         "wireshark"
     ) | ForEach-Object {
@@ -157,31 +146,31 @@ function installDotfiles {
     }
     New-Item -Path "$Env:UserProfile\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-powershell\Microsoft.PowerShell_profile.ps1" -ItemType SymbolicLink -Force
     New-Item -Path "$Env:LocalAppData\Microsoft\Windows Terminal\settings.json" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-terminal\settings.json" -ItemType SymbolicLink -Force
-}
-
-function manualSettingSystem {
-    $inputPcName = Read-Host "PC名を入力してください"
-    Rename-Computer -NewName $inputPcName -Force
+    New-Item -Path "$Env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$Env:UserProfile\WorkSpaces\Git\$gitRepositoryName\dot\windows-terminal\settings.json" -ItemType SymbolicLink -Force
 }
 
 function manualSettingGUI {
     Start-Process ms-settings:windowsupdate-options
-    Read-Host "ToDo: Windowsの更新時に他のMicrosoft製品の更新プログラムを受け取る 設定"
+    Read-Host "ToDo: その他のMicrosoft製品の更新プログラムを受け取る 設定"
     Write-Host "[Update] Windows"
     UsoClient StartInteractiveScan
-    Start-Process shell:recyclebinfolder
-    Read-Host "ToDo: ごみ箱 設定"
     Start-Process ms-settings:taskbar
-    Read-Host "ToDo: タスクバーの位置 設定"
+    Read-Host "ToDo: タスクバー 設定"
     Start-Process ms-settings:defaultapps
     Read-Host "ToDo: 既定のアプリ 設定"
+    Start-Process ms-settings:clipboard
+    Read-Host "ToDo: クリップボード 設定"
+    Start-Process ms-settings:regionlanguage-jpnime
+    Read-Host "ToDo: IME 設定"
     Start-Process ms-settings:optionalfeatures
     Read-Host "ToDo: オプション機能 設定"
     Start-Process optionalfeatures
     Read-Host "ToDo: Windowsの機能 設定"
+    Start-Process shell:recyclebinfolder
+    Read-Host "ToDo: ごみ箱 設定"
     Start-Process explorer "$Env:UserProfile\scoop\apps"
     Start-Process shell:startup
     Read-Host "ToDo: スタートアップ 設定"
-    Read-Host "ToDo: スタートメニュータイル 削除"
+    Read-Host "ToDo: スタートメニューピン留め 削除"
     Read-Host "ToDo: その他UI カスタマイズ"
 }

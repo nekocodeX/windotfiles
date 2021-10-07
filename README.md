@@ -4,11 +4,11 @@ Windows 用 dotfiles のような何か
 
 ## ✅ 動作環境
 
-Windows 10 Pro 20H2 以降
+Windows 11 Pro 21H2 以降
 
 ## 📦 使い方
 
-`Windows PowerShell (管理者)` で以下を実行
+`Windows ターミナル (管理者)` で以下を実行
 
 ### 初期セットアップ
 

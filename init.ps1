@@ -52,9 +52,6 @@ git clone $gitRepositoryURL
 Set-Location $PSScriptRoot
 installDotfiles
 
-Write-Host "[Manual] [Setting] System"
-manualSettingSystem
-
 Write-Host "[Manual] [Setting] GUI"
 manualSettingGUI
 
