@@ -126,7 +126,6 @@ function installScoopApps {
     }
 
     reg import "$Env:UserProfile\scoop\apps\vscode\current\vscode-install-context.reg"
-    smarttaskbar-add-startup
 }
 
 function settingUserPath {
