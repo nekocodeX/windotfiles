@@ -118,7 +118,7 @@ function installScoopApps {
         "starship",
         "sudo",
         "vcredist2019",
-        "vscode",
+        "vim",
         "winscp",
         "wireshark"
     ) | ForEach-Object {
