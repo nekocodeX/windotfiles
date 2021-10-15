@@ -114,7 +114,6 @@ function installScoopApps {
         "neofetch",
         "quicklook",
         "scoop-viewer",
-        "simplenote",
         "starship",
         "sudo",
         "vcredist2019",
