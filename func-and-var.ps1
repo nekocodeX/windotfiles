@@ -108,7 +108,6 @@ function installScoopApps {
         "eartrumpet",
         "gimp",
         "gitignore",
-        "googlechrome",
         "grep",
         "less",
         "neofetch",
@@ -118,8 +117,7 @@ function installScoopApps {
         "sudo",
         "vcredist2019",
         "vim",
-        "winscp",
-        "wireshark"
+        "winscp"
     ) | ForEach-Object {
         scoop install $_
     }
